@@ -229,5 +229,10 @@ func main() {
 	html := `<html><head><title>My test page</title></head><body><h1 id="oi" class="title page h1">Hello world!</h1><div class="oi">OI</div></body></html>`
 	css := `h1 { color: #ffffff; } h2 { color: #000000; } div { background-color: #000000; width: 100px; height: 100px; } .oi { color: #000000;}`
 
-	printHtmlWithStyle(parseHTMLString(html), "", parseCSSString(css))
+	// TODO: add go routines
+
+	htmlParse := parseHTMLString(html)
+	cssParse := parseCSSString(css)
+
+	printHtmlWithStyle(htmlParse, "", cssParse)
 }
